@@ -7,7 +7,8 @@ if __name__ == "__main__":
         'Input 5 to 256 bytes seed key in hex (like \'0123456789abcdef\', input nothing to abort): ')
 
     try:
-        if len(inputKey) >= 10 and len(inputKey) <= 512:
+        # 输入密钥必须满足5 - 256 整数 字节
+        if len(inputKey) >= 10 and len(inputKey) <= 512 and (len(inputKey) % 2 == 0):
             print('DES decode result: ', rc4(inputKey))
         else:
             print("Check input data.")
